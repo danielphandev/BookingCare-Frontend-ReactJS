@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './UserManage.scss'
 import { getAllUSers } from '../../services/userService';
 import { Fragment } from 'react';
+import ModalUser from './ModalUser';
 class UserManage extends Component {
 
     /** Life cycle
@@ -17,7 +18,8 @@ class UserManage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            arrUsers: []
+            arrUsers: [],
+            isOpenModalUser: false,
         }
     }
 
@@ -33,25 +35,46 @@ class UserManage extends Component {
         console.log('get user from node.js', response);
     }
 
+    handleAddNewUser = () => {
+        this.setState({
+            isOpenModalUser: true
+        })
+    }
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser,
+        })
+    }
 
     render() {
         let arrUsers = this.state.arrUsers;
         return (
             <div className="users-container">
+                <ModalUser
+                    isOpen={this.state.isOpenModalUser}
+                    toggleFromParent={this.toggleUserModal}
+                />
                 <div className='title text-center'>Manage users</div>
+                <div className='mx-1'>
+                    <button
+                        className='btn btn-primary px-3'
+                        onClick={() => this.handleAddNewUser()}
+                    ><i className='fas fa-plus me-1'></i>Add new user</button>
+                </div>
                 <div className='users-table mt-3 mx-1'>
                     <table id="customers">
-                        <tr>
-                            <th>Email</th>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Address</th>
-                            <th>Actions</th>
-                        </tr>
-                        {arrUsers && arrUsers.map((item, index) => {
-                            return (
-                                <Fragment>
-                                    <tr>
+                        <tbody>
+                            <tr>
+                                <th>Email</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Address</th>
+                                <th>Actions</th>
+                            </tr>
+                            {arrUsers && arrUsers.map((item, index) => {
+                                return (
+
+                                    <tr key={index}>
                                         <td>{item.email}</td>
                                         <td>{item.firstName}</td>
                                         <td>{item.lastName}</td>
@@ -61,11 +84,13 @@ class UserManage extends Component {
                                             <button className='btn-delete'><i className='fas fa-trash'></i></button>
                                         </td>
                                     </tr>
-                                </Fragment>
-                            )
-                        })
 
-                        }
+                                )
+                            })
+
+                            }
+                        </tbody>
+
 
                     </table>
                 </div>
