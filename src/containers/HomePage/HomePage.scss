@@ -30,6 +30,9 @@
     background: #d7d7d7 !important;
   }
 }
+.slick-disabled {
+  display: none !important;
+}
 
 .section-share {
   &.section-specialty {
@@ -37,6 +40,10 @@
   }
   &.section-outstanding-doctor {
     background: #f5f5f5;
+  }
+  &.section-about {
+    background: #f5f5f5;
+    height: 500px !important;
   }
 
   .section-body {
@@ -55,7 +62,7 @@
           background-image: url("../../assets/medical-facility/csyt.png");
         }
         &.section-outstanding-doctor {
-          background-image: url("../../assets/outstanding-doctor/bs.jpg");
+          // background-image: url("../../assets/outstanding-doctor/bs.jpg");
           width: 120px;
           height: 120px;
           border-radius: 50%;
@@ -111,9 +118,42 @@
   }
   .section-customize {
     padding: 5px;
+    cursor: pointer;
     .customize-border {
       border: 1px solid orange;
       padding: 20px;
+    }
+  }
+}
+
+.home-footer {
+  text-align: center;
+  padding: 8px;
+  a {
+    text-decoration: unset;
+  }
+}
+
+.section-about {
+  padding: 0 100px;
+  .section-about-header {
+    padding: 20px 10px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .section-about-content {
+    display: flex;
+
+    .content-left {
+      width: 60%;
+    }
+    .content-right {
+      width: 40%;
+      p {
+        text-align: justify;
+        font-style: italic;
+        padding: 15px;
+      }
     }
   }
 }
