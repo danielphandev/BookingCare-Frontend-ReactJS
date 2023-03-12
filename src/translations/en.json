@@ -36,7 +36,8 @@
             "manage-handbook": "Handbooks Management"
         },
         "doctor": {
-            "manage-schedule": "Doctor's Schedule Management"
+            "manage-schedule": "Doctor's Schedule Management",
+            "manage-patient": "Doctor's Patient Management"
         }
     },
     "manage-user": {
@@ -56,7 +57,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Featured Doctor Last Week",
-        "more-infor": "More Info"
+        "more-infor": "More Info",
+        "popular-specialty": "Popular specialties"
     },
     "manage-schedule":{
         "title": "Manage doctor's examination plan",
@@ -74,10 +76,23 @@
         },
         "extra-infor-doctor":{
             "text-address": "Address of examination",
-            "price": "Examination price",
+            "price": "Examination price: ",
             "detail": "View details",
             "payment": "The patient can pay the cost in the form of: ",
             "hide-price": "Hide price list"
+        },
+        "booking-modal":{
+            "title": "Information to book a medical appointment",
+            "fullName": "Name",
+            "phoneNumber": "Phone number",
+            "email": "Email",
+            "address": "Contact address",
+            "reason": "Reasons for medical examination",
+            "birthday": "Date of birth",
+            "gender": "Gender",
+            "btnConfirm": "Confirm",
+            "btnCancel": "Cancel",
+            "priceBooking": "Free booking"
         }
     },
     "admin": {
@@ -92,7 +107,9 @@
             "province": "Province",
             "nameClinic": "Clinic's name",
             "addressClinic": "Clinic's address",
-            "note": "Note"
+            "note": "Note",
+            "specialty":"Choose Specialty",
+            "clinic": "Clinic"
         }
     }
 
