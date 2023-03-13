@@ -4,6 +4,15 @@
     background: #eee;
     display: flex;
     flex-direction: column;
+    img {
+      width: 80%;
+      margin: auto;
+      display: block;
+    }
+    h2 {
+      color: #3f82bbfa;
+      margin-top: 25px;
+    }
   }
 
   .description-specialty {
